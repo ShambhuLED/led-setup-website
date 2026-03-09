@@ -1,6 +1,6 @@
 /* ========================================
-   LED SETUP PRO - STYLESHEET
-   Theme: Dark with LED Neon Effects
+   SHAMBHU LED SETUP - SIMPLE RECRUITMENT
+   Clean, Mobile-First Design
    ======================================== */
 
 * {
@@ -9,488 +9,235 @@
     box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #00d4ff;
-    --secondary-color: #ff006e;
-    --bg-dark: #0a0a0a;
-    --bg-card: #121212;
-    --text-light: #ffffff;
-    --text-gray: #b3b3b3;
-    --led-blue: #00f0ff;
-    --led-pink: #ff00ff;
-}
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: #f5f5f5;
+    color: #333;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-/* ========================================
-   NAVIGATION
-   ======================================== */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    border-bottom: 2px solid var(--primary-color);
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--text-light);
-}
-
-.led-text {
-    color: var(--primary-color);
-    text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: var(--primary-color);
-    transition: 0.3s;
-}
-
-/* ========================================
-   HERO SECTION
-   ======================================== */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 100px 5%;
-    overflow: hidden;
-}
-
-.hero-content {
+/* Header */
+.header {
+    background: #1a73e8;
+    color: white;
     text-align: center;
-    z-index: 2;
+    padding: 2rem 1rem;
 }
 
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-}
-
-.led-glow {
-    color: var(--led-blue);
-    text-shadow: 
-        0 0 10px var(--led-blue),
-        0 0 20px var(--led-blue),
-        0 0 40px var(--led-blue),
-        0 0 80px var(--led-blue);
-    animation: flicker 2s infinite;
-}
-
-.led-glow-secondary {
-    color: var(--led-pink);
-    text-shadow: 
-        0 0 10px var(--led-pink),
-        0 0 20px var(--led-pink),
-        0 0 40px var(--led-pink);
-    animation: flicker 2.5s infinite;
-}
-
-@keyframes flicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
-    75% { opacity: 1; }
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    color: var(--text-gray);
-    margin-bottom: 2rem;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 1rem 3rem;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 50px;
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(0, 212, 255, 0.8);
-}
-
-.led-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.led-grid {
-    width: 100%;
-    height: 100%;
-    background-image: 
-        linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: gridMove 20s linear infinite;
-}
-
-@keyframes gridMove {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(50px); }
-}
-
-/* ========================================
-   SECTIONS COMMON
-   ======================================== */
-section {
-    padding: 80px 5%;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.highlight {
-    color: var(--primary-color);
-    text-shadow: 0 0 10px var(--primary-color);
-}
-
-/* ========================================
-   SERVICES SECTION
-   ======================================== */
-.services {
-    background: var(--bg-card);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
-}
-
-.service-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.service-card p {
-    color: var(--text-gray);
-    margin-bottom: 1rem;
-}
-
-.service-features {
-    list-style: none;
-}
-
-.service-features li {
-    color: var(--text-gray);
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* ========================================
-   TEAM SECTION
-   ======================================== */
-.team-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.team-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.stat-card {
-    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid rgba(255, 0, 110, 0.3);
-}
-
-.stat-number {
-    font-size: 3rem;
-    color: var(--secondary-color);
-    text-shadow: 0 0 10px var(--secondary-color);
-}
-
-.stat-label {
-    color: var(--text-gray);
-    margin-top: 0.5rem;
-}
-
-.team-description {
-    background: var(--bg-card);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 212, 255, 0.2);
-}
-
-.team-description p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-gray);
-}
-
-.team-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.skill-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(0, 212, 255, 0.1);
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    border: 1px solid var(--primary-color);
-}
-
-.skill-icon {
-    font-size: 1.5rem;
-}
-
-/* ========================================
-   PORTFOLIO SECTION
-   ======================================== */
-.portfolio {
-    background: var(--bg-card);
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.portfolio-item {
-    text-align: center;
-}
-
-.portfolio-placeholder {
-    width: 100%;
-    height: 250px;
-    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    color: var(--text-gray);
-}
-
-.portfolio-item p {
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-/* ========================================
-   CONTACT SECTION
-   ======================================== */
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.contact-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
-    font-size: 1.1rem;
-}
-
-.info-icon {
-    font-size: 1.5rem;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 1rem;
-    background: #1a1a1a;
-    border: 1px solid rgba(0, 212, 255, 0.3);
-    border-radius: 8px;
-    color: var(--text-light);
-    font-size: 1rem;
-    font-family: inherit;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
-}
-
-.submit-button {
-    padding: 1rem 2rem;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    border: none;
-    border-radius: 8px;
-    color: var(--text-light);
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.submit-button:hover {
-    transform: scale(1.05);
-}
-
-/* ========================================
-   FOOTER
-   ======================================== */
-.footer {
-    background: #050505;
-    padding: 2rem;
-    text-align: center;
-    border-top: 2px solid var(--primary-color);
-}
-
-.footer p {
-    color: var(--text-gray);
+.header h1 {
+    font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
-.footer-tagline {
-    color: var(--primary-color);
+.tagline {
     font-size: 1.1rem;
+    opacity: 0.9;
 }
 
-/* ========================================
-   RESPONSIVE
-   ======================================== */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(10, 10, 10, 0.98);
-        flex-direction: column;
-        padding: 2rem;
-        gap: 1rem;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
+/* Main Content */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
-/* ========================================
-   WHATSAPP FLOATING BUTTON
-   ======================================== */
+/* Job Alert */
+.job-alert {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.job-alert h2 {
+    color: #1a73e8;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.highlight {
+    background: #fff3cd;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border-left: 4px solid #ffc107;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Positions */
+.positions {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.positions h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.job-cards {
+    display: grid;
+    gap: 1rem;
+}
+
+.job-card {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.job-card h4 {
+    color: #1a73e8;
+    margin-bottom: 0.5rem;
+}
+
+.job-card ul {
+    list-style: none;
+    margin-top: 0.5rem;
+}
+
+.job-card li {
+    padding: 0.25rem 0;
+    color: #666;
+}
+
+/* Benefits */
+.benefits {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.benefits h3 {
+    color: #2e7d32;
+    margin-bottom: 1rem;
+}
+
+.benefits-list {
+    list-style: none;
+}
+
+.benefits-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+/* Requirements */
+.requirements {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.requirements h3 {
+    color: #d32f2f;
+    margin-bottom: 1rem;
+}
+
+.requirements-list {
+    list-style: none;
+}
+
+.requirements-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.requirements-list li:last-child {
+    border-bottom: none;
+}
+
+/* Contact CTA */
+.contact-cta {
+    background: linear-gradient(135deg, #1a73e8, #1565c0);
+    color: white;
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contact-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-cta p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-call {
+    background: white;
+    color: #1a73e8;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.contact-info {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.footer .small {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 0.5rem;
+}
+
+/* WhatsApp Floating Button */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -506,38 +253,42 @@ section {
     font-size: 30px;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
     z-index: 1000;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
+    transition: transform 0.2s;
 }
 
 .whatsapp-float:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
 }
 
-/* Contact Info Links */
-.contact-info .info-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
-    font-size: 1.1rem;
-    text-decoration: none;
-    color: var(--text-light);
-    transition: color 0.3s ease;
-}
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
 
-.contact-info .info-item:hover {
-    color: var(--primary-color);
-}
+    .tagline {
+        font-size: 1rem;
+    }
 
-/* Recruitment CTA */
-.join-cta {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+    .job-alert h2 {
+        font-size: 1.2rem;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 15px;
+        right: 15px;
+    }
 }
